@@ -3,7 +3,6 @@ import MaisonCard from '@/components/AfficheMaison.vue';
 </script>
 
 <template>
-  <main>
+    <h1>Simple</h1>
     <MaisonCard />
-  </main>
 </template>
