@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AfficheMaison from '@/components/AfficheMaison.vue';
 const maisons = [
     {
         id: "1",
@@ -37,5 +38,8 @@ const maisons = [
 </script>
 
 <template>
-  <h1>Liste</h1>
+    <h1>Liste</h1>
+    <AfficheMaison v-bind="maisons[0]" />
+    <AfficheMaison v-bind="maisons[1]" />
+    <AfficheMaison v-bind="maisons[2]" />
 </template>

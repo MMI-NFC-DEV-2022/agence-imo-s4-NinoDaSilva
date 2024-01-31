@@ -1,5 +1,5 @@
 <script setup lang="ts">
-export interface SchemaOffreMaison{
+defineProps<{
     id?: string; 
     nomMaison: string;
     prix: number;
@@ -9,7 +9,7 @@ export interface SchemaOffreMaison{
     nbrSDB: number;
     adresse: string;
     surface: string;
-};
+}>();
 </script>
 
 <template>
