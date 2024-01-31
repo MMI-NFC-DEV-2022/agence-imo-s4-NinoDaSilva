@@ -1,11 +1,15 @@
 <script setup lang="ts">
-    // import type { MaisonResponse } from '@/pocketbase-types';
-    // const props: MaisonResponse = defineProps<MaisonResponse>();
-
-    // import { pb } from '@/backend';
-    // const img0 = props.images[0];
-    // // si pas d'image (undefined) garde undefined
-    // const urlImg0 = img0 && pb.getFileUrl(props, img0, { thumb: '100x200' });
+export interface SchemaOffreMaison{
+    id?: string; 
+    nomMaison: string;
+    prix: number;
+    favori: boolean;
+    image: string;
+    nbrChambres: number;
+    nbrSDB: number;
+    adresse: string;
+    surface: string;
+};
 </script>
 
 <template>

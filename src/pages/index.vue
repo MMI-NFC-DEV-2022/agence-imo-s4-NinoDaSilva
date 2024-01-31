@@ -1,8 +1,5 @@
-<script setup lang="ts">
-import MaisonCard from '@/components/MaisonCard.vue';
-</script>
+<script setup lang="ts"></script>
+
 <template>
-  <main>
-    <MaisonCard />
-  </main>
+  <main>bonjour de home</main>
 </template>
