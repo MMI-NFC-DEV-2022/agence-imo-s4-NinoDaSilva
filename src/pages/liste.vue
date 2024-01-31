@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AfficheMaison from '@/components/AfficheMaison.vue';
+
 const maisons = [
     {
         "id": "1",
@@ -10,7 +11,7 @@ const maisons = [
         "nbrChambres": 3,
         "nbrSDB": 2,
         "adresse": "123 Rue de la Maison A",
-        "surface": "150 m²"
+        "surface": "150 m²",
     },
     {
         "id": "2",
@@ -21,7 +22,7 @@ const maisons = [
         "nbrChambres": 4,
         "nbrSDB": 3,
         "adresse": "456 Rue de la Maison B",
-        "surface": "200 m²"
+        "surface": "200 m²",
     },
     {
         "id": "3",
@@ -32,12 +33,15 @@ const maisons = [
         "nbrChambres": 2,
         "nbrSDB": 1,
         "adresse": "789 Rue de la Maison C",
-        "surface": "120 m²"
-    }
+        "surface": "120 m²",
+    },
 ];
 </script>
 
 <template>
     <h1>Liste</h1>
     <AfficheMaison v-for="maison in maisons" :key="maison.id" :maison="maison" />
+
+    <h2>Affichage individuel</h2>
+    <AfficheMaison :maison="maisons[0]" />
 </template>

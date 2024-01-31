@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import AfficheMaison from '@/components/AfficheMaison.vue';
 import maisons from '@/assets/maisons.json';
-import { SchemaOffreMaison } from '@/types';
-defineProps<SchemaOffreMaison>();
 </script>
 
 <template>
