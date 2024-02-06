@@ -13,10 +13,22 @@ const maison = ref({});
             <AfficheMaison v-bind="maison" />
         </div>
         <div class="pt-2">
-            <FormKit type="form" v-model="maison" >
-                <FormKit name="nom" label="nom" />
-                <FormKit name="prix" label="prix" type="number" />
-                <FormKit name="favori" label="mettre en favori" type="checkbox" />
+            <FormKit type="form" v-model="maison" 
+                :config="{
+                classes: {
+                    input: 'p-1 rounded border-gray-300 shadow-sm border',
+                    label: 'text-gray-600',
+                    },
+                }"
+            >
+                <FormKit name="nomMaison" label="Nom" />
+                <FormKit name="adresse" label="Adresse" type="number"/>
+                <FormKit name="prix" label="Prix" type="number" />
+                <FormKit name="nbrChambres" label="Nombre de chambre" type="number" />
+                <FormKit name="nbrSDB" label="Nombre de salle de bain" type="number"/>
+                <FormKit name="surface" label="Surface" type="number"/>
+                <FormKit name="image" label="Photo" type="file"/>
+                <FormKit name="favori" label="Mettre en favori" type="checkbox" />
             </FormKit>
         </div>
     </div>
