@@ -20,12 +20,13 @@ const maison = ref({});
                     label: 'text-gray-600',
                     },
                 }"
+                :submit-attrs="{ classes: { input: 'bg-red-300 p-1 rounded' } }"
             >
                 <FormKit name="nomMaison" label="Nom" />
-                <FormKit name="adresse" label="Adresse" type="number"/>
+                <FormKit name="adresse" label="Adresse" />
                 <FormKit name="prix" label="Prix" type="number" />
                 <FormKit name="nbrChambres" label="Nombre de chambre" type="number" />
-                <FormKit name="nbrSDB" label="Nombre de salle de bain" type="number"/>
+                <FormKit name="nbrSdb" label="Nombre de salle de bain" type="number" />
                 <FormKit name="surface" label="Surface" type="number"/>
                 <FormKit name="image" label="Photo" type="file"/>
                 <FormKit name="favori" label="Mettre en favori" type="checkbox" />

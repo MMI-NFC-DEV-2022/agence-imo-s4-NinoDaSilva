@@ -30,3 +30,4 @@ coverage
 *.tsbuildinfo
 
 typed-router.d.ts
+.env
