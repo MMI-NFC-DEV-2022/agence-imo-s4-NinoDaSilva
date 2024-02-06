@@ -1,11 +1,11 @@
 export interface SchemaOffreMaison {
-    id?: string; 
+    id?: number; 
     nomMaison: string;
     prix: number;
     favori: boolean;
     image: string;
     nbrChambres: number;
-    nbrSDB: number;
+    nbrSdb: number;
     adresse: string;
     surface: string;
 };

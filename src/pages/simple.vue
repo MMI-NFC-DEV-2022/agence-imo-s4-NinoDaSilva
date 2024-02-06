@@ -8,9 +8,9 @@ const offreMaison: SchemaOffreMaison = {
     favori: true,
     image: "maisonA.jpg",
     nbrChambres: 3,
-    nbrSDB: 2,
+    nbrSdb: 2,
     adresse: "123 Rue de la Maison A",
-    surface: "150 m²",
+    surface: "150",
 };
 </script>
 

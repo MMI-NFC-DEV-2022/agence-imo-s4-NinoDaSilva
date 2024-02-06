@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SchemaOffreMaison } from '@/types';
+import { type SchemaOffreMaison } from '@/types';
 defineProps<SchemaOffreMaison>();
 </script>
 
@@ -81,7 +81,7 @@ defineProps<SchemaOffreMaison>();
                 stroke-linejoin="round">
             </path>
             </svg>
-            <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{nbChambres}} Beds</p>
+            <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{nbrChambres}} Beds</p>
         </div>
         <div class="flex justify-center items-center flex-grow relative gap-2">
             <svg width="20"
@@ -123,7 +123,7 @@ defineProps<SchemaOffreMaison>();
                 </clipPath>
             </defs>
             </svg>
-            <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{nbSdb}} Bathrooms</p>
+            <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{nbrSdb}} Bathrooms</p>
         </div>
         <div class="flex justify-end items-center flex-grow relative gap-2">
             <svg width="20"
@@ -164,7 +164,7 @@ defineProps<SchemaOffreMaison>();
         </div>
     </div>
 
-    <img :src="urlImg0"
+    <img :src="image"
         class="w-[353px] h-[200px] absolute left-[-1px] top-[-1px] rounded-tl-lg rounded-tr-lg object-cover"/>
     </div>
 </template>
