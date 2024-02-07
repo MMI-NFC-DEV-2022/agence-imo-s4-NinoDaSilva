@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import AfficheMaison from '@/components/AfficheMaison.vue';
 import FormulaireOffreMaison from '@/components/FormulaireOffreMaison.vue';
-import { supabase } from '@/supabase';
-
-let { data: tableauMaisons, error } = await supabase
-  .from('Maisons')
-  .select('*')
 
 </script>
 
