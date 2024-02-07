@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import AfficheMaison from '@/components/AfficheMaison.vue';
-import { type SchemaOffreMaison } from '@/types';
 import { supabase } from "@/supabase";
 
-const tableauMaisons:SchemaOffreMaison[] = [];
-
-
+let { data: tableauMaisons, error } = await supabase
+  .from('Maisons')
+  .select('*')
 </script>
 
 
