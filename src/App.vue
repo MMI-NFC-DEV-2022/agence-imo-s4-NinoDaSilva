@@ -14,6 +14,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <RouterLink to="/liste-fetch">Liste Maisons Fetch</RouterLink>
       <RouterLink to="/maisons/edit/FormkitPage">Fomulaire Maisons</RouterLink>
       <RouterLink to="/liste-supabase">Liste Maisons Supabase</RouterLink>
+      <RouterLink to="/ConnexionPage">Connexion</RouterLink>
     </nav>
   </header>
 
