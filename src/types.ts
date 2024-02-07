@@ -7,5 +7,5 @@ export interface SchemaOffreMaison {
     nbrChambres: number;
     nbrSdb: number;
     adresse: string;
-    surface: string;
+    surface: number;
 };
