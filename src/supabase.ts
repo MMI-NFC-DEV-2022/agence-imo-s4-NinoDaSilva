@@ -11,7 +11,6 @@ console.log("supabase :", supabase); // pour vérifier et "garder" supabase dans
 // Identification user
 const { data } = await supabase.auth.getUser()
 export const user = ref(data.user)
-supabase.auth.onAuthStateChange(async ()=>{
-    const { data } = await supabase.auth.getUser()
-    user.value = data.user
+supabase.auth.onAuthStateChange( (evt,session)=>{
+    user.value = session?.user ?? null
 })

@@ -2,16 +2,6 @@
 import { ref } from 'vue';
 import { supabase, user } from '@/supabase';
 
-async function signIn(data, node) {
-  const { user, error } = await (nvlUtilisateur.value
-    ? supabase.auth.signUp(data)
-    : supabase.auth.signIn(data));
-  if (error) {
-    console.error(error);
-    node.setErrors([error.message]);
-  }
-}
-const nvlUtilisateur = ref(false);
 </script>
 
 <template>
@@ -20,7 +10,7 @@ const nvlUtilisateur = ref(false);
         <button v-if="user" @pointerdown="supabase.auth.signOut()">
             Se déconnecter ({{ user.email }})
         </button>
-        <button v-else @pointerdown="supabase.auth.signInWithOAuth({provider: 'github'})" class="border p-2">
+        <button v-else @pointerdown="supabase.auth.signInWithOAuth({provider: 'github'})" class="border p-2 hover:shadow-md">
             Se connecter avec Github
         </button>
     </div>
