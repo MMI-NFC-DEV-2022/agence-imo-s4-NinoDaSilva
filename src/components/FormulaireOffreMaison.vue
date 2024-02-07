@@ -11,18 +11,17 @@ async function upsertMaison(dataForm, node) {
     const { data, error } = await supabase.from("Maisons").upsert(dataForm).select();
     if (error) node.setErrors([error.message]);
     else {
-        alert("Offre ajoutée avec succès !");
-        node.reset();
+        node.setErrors([]);
         router.push({name: "/maisons/edit/[id]", params: {id: data[0].id} });
     }
 }
 
 const route = useRoute("/maisons/edit/[id]");
 if (route.params.id) {
-    const { data, error } = await supabase.from("Maisons").select().eq("id", route.params.id).single();
-    if (error) console.error("error", error);
-    else maison.value = data;
-}""
+    let { data, error } = await supabase.from("Maisons").select("*").eq("id", route.params.id);
+    if (error) console.log("error", error);
+    else maison.value = (data as any[]) [0];
+}
 
 </script>
 
