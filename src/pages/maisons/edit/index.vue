@@ -1,4 +1,3 @@
-//index.vue
 <script setup lang="ts">
 import AfficheMaison from '@/components/AfficheMaison.vue';
 import { supabase } from '@/supabase';
@@ -10,11 +9,12 @@ let { data: tableauMaisons, error } = await supabase
 </script>
 
 <template>
-
-    <div class="margin-auto justify-center">
-
+  <h1 class="text-3xl pb-4">Liste des offres</h1>
+  <div class="grid gap-10">
+    <div v-for="maison in tableauMaisons" :key="maison.id">
+      <RouterLink :to="{name: '/maisons/edit/[id]', params: {id: maison.id} }">  
+        <AfficheMaison v-bind="maison"/>
+      </RouterLink>
     </div>
-    <div class="grid grid-cols-3 gap-4">
-    <AfficheMaison v-for="maison in tableauMaisons" v-bind="maison"/>
-    </div>
+  </div>
 </template>

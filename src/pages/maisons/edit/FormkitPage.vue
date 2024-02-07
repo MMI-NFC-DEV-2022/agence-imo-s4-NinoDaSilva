@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import FormulaireOffreMaison from '@/components/FormulaireOffreMaison.vue';
+import FormulaireCreation from '@/components/FormulaireCreation.vue';
 
 </script>
 
 <template>
-    <FormulaireOffreMaison />
+    <div>
+        <h2 class="text-3xl">Formulaire de création d'offre</h2>
+        <FormulaireCreation/>
+    </div>
 </template>

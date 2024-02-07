@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Nunito', sans-serif;
+  padding: 20px;
+}
+
+.menu > *:hover{
+  opacity: 0.9;
+  color: #000;
+}
