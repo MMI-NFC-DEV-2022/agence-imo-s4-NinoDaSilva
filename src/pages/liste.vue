@@ -40,11 +40,13 @@ const maisons = [
 
 <template>
     <h1>Liste</h1>
-    <AfficheMaison v-for="maison in maisons" :key="maison.id" :maison="maison"/>
+    <AfficheMaison v-for="maison in maisons" :key="maison.id" v-bind="maison"/>
     
-    <h2>Affichage individuel</h2>
-    <AfficheMaison v-bind="maisons[0]" />
-    <AfficheMaison v-bind="maisons[1]" />
-    <AfficheMaison v-bind="maisons[2]" />
+    <div class="my-4">
+        <h2>Affichage individuel</h2>
+        <AfficheMaison v-bind="maisons[0]" />
+        <AfficheMaison v-bind="maisons[1]" />
+        <AfficheMaison v-bind="maisons[2]" />
+    </div>
 
 </template>
