@@ -17,6 +17,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <RouterLink to="/maisons/edit/FormkitPage">Fomulaire de création</RouterLink>
       <RouterLink to="/maisons/edit/">Liste des offres</RouterLink>
       <RouterLink to="/ConnexionPage">Connexion</RouterLink>
+
+      <RouterLink to="/quartiers">Listes des quartiers</RouterLink>
     </nav>
   </header>
 
