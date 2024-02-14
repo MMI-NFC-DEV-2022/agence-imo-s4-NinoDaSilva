@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import FormulaireQuartier from '../../../components/FormulaireQuartier.vue';
+import FormulaireQuartier from "../../../components/FormulaireQuartier.vue";
+import { useRoute } from 'vue-router/auto'
+
+const route = useRoute('/quartiers/edit/[id]')
 
 </script>
 
 <template>
-    <div>
-        <h2 class="text-3xl">Formulaire de création d'offre id</h2>
-        <FormulaireQuartier />
-    </div>
+  <div class="p-2">
+    <FormulaireQuartier :id="route.params.id" />
+  </div>
 </template>
