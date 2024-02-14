@@ -41,7 +41,7 @@ async function supprimerQuartier() {
   const { data, error } = await supabase
     .from("quartier")
     .delete()
-    .match({ id_quartier: quartier.value.id });
+    .match({ id: quartier.value.id });
   if (error) {
     console.error(
       "Erreur à la suppression de ", 
