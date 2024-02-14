@@ -15,18 +15,20 @@ if (error) console.log("n'a pas pu charger la table quartiercommune :", error)
         v-for="(listeQuartier, libelleCommune) in groupBy(data, 'nom_commune')"
         :key="libelleCommune"
       >
-        <DisclosureButton class="py-2">{{ libelleCommune }}</DisclosureButton>
+        <DisclosureButton class="block py-1 text-green-900 text-xl">{{ libelleCommune }}</DisclosureButton>
         <DisclosurePanel>
-          <ul>
+          <ul class="text-gray-700">
             <li v-for="quartierObject in listeQuartier" :key="quartierObject.id_quartier">
-              {{ quartierObject.nom_quartier }}
+              <RouterLink :to="{ name: '/quartiers/edit/[id]', params: { id: quartierObject.id_quartier } }" class="hover:text-green-600 hover:text-xl">
+                {{ quartierObject.nom_quartier }}
+              </RouterLink>
             </li>
           </ul>
         </DisclosurePanel>
       </Disclosure>
     </div>
 
-    <h3 class="text-2xl">Liste des quartiers et des communes</h3>
+    <!-- <h3 class="text-2xl">Liste des quartiers et des communes</h3>
     <ul>
       <li v-for="(listeQuartier, libelleCommune) in Object.groupBy(data, v=> v.nom_commune)">
         {{ libelleCommune }}
@@ -36,6 +38,6 @@ if (error) console.log("n'a pas pu charger la table quartiercommune :", error)
           </RouterLink>
         </div>
       </li>
-    </ul>
+    </ul> -->
   </section>
 </template>
