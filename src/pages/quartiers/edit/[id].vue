@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FormulaireQuartier from '../../components/FormulaireQuartier.vue';
+import FormulaireQuartier from '../../../components/FormulaireQuartier.vue';
 
 </script>
 
