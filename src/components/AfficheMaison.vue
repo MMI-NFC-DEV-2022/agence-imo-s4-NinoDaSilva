@@ -1,6 +1,18 @@
 <script setup lang="ts">
+// import { ref } from 'vue';
+// import { supabase } from "@/supabase";
+// import { Tables } from '@/supabase-types';
+
 import { type SchemaOffreMaison } from '@/types';
 defineProps<SchemaOffreMaison>();
+
+// const quartier = ref<Tables<'quartiercommune'>>({});
+// // Charger les données des communes
+// const { data: listeCommune, error } = await supabase
+//   .from("commune")
+//   .select("*");
+// if (error) console.log("n'a pas pu charger la table Commune :", error);
+
 </script>
 
 <template>
