@@ -2,9 +2,9 @@
 import { ref } from "vue";
 import { supabase } from "@/supabase";
 import { useRoute, useRouter } from "vue-router/auto";
-import AfficheQuartier from "../components/AfficheQuartier.vue";
+import { Tables } from '@/supabase-types';
 
-const quartier = ref({});
+const quartier = ref<Tables<'quartiercommune'>>({});
 const router = useRouter();
 
 // Envoie des donnees du formulaire
@@ -32,18 +32,38 @@ const { data: listeCommune, error } = await supabase
 if (error) console.log("n'a pas pu charger la table Commune :", error);
 // Les convertir par `map` en un tableau d'objets {value, label} pour FormKit
 const optionsCommune = listeCommune?.map((commune) => ({
-  value: commune.id_Commune,
+  value: commune.id,
   label: commune.nom_commune,
 }));
+
+// Suppression quartiers
+async function supprimerQuartier() {
+  const { data, error } = await supabase
+    .from("quartier")
+    .delete()
+    .match({ id_quartier: quartier.value.id });
+  if (error) {
+    console.error(
+      "Erreur à la suppression de ", 
+      quartier.value,
+      "erreur :", 
+      error
+    );
+  } else {
+    router.push("/quartiers");
+  }
+}
 
 </script>
 
 <template>
     <div>
-        <div class="pt-2">
+        <!-- <div class="pt-2">
             <h2 class="text-2xl">Prévisualisation</h2>
-            <AfficheQuartier v-bind="quartier" />
-        </div>
+            <div>Quartier : {{ quartier.nom_quartier }}</div>
+            <div>Commune : {{ quartier.id_Commune }}</div>
+        </div> -->
+        <h1 class="text-3xl">Modification du quartier</h1>
         <div class="pt-2">
             <FormKit type="form" v-model="quartier" @submit="upsert"
                 :config="{
@@ -52,11 +72,28 @@ const optionsCommune = listeCommune?.map((commune) => ({
                     label: 'text-gray-600',
                     },
                 }"
-                :submit-attrs="{ classes: { input: 'bg-red-300 p-1 rounded' } }"
+                :submit-attrs="{ classes: { input: 'bg-red-300 p-1 rounded my-2' } }"
             >
                 <FormKit name="nom_quartier" label="Nom" />
                 <FormKit name="id_Commune" label="Commune" type="select" :options="optionsCommune" />
             </FormKit>
         </div>
+        <!-- Bouton de suppression -->
+        <button
+            type="button"
+            v-if="quartier.id"
+            @click="($refs.dialogSupprimer as any).showModal()"
+            class="focus-style justify-self-end rounded-md bg-red-500 p-2 my-2 shadow-sm"
+        >
+            Supprimer
+        </button>
+        <dialog ref="dialogSupprimer" @click="($event.currentTarget as any).close()">
+            <button type="button" class="focus-style justify-self-end rounded-md bg-blue-300 p-2 shadow-sm">
+                Annuler
+            </button>
+            <button type="button" @click="supprimerQuartier()" class="focus-style rounded-md bg-red-500 p-2 shadow-sm">
+                Confirmer suppression
+            </button>
+        </dialog>
     </div>
 </template>
